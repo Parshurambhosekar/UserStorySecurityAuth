@@ -1,0 +1,17 @@
+
+
+server:
+  port: 8082
+
+app:
+  messages:
+        msg1:
+          Username is Incorrect
+            
+        msg2:
+          Password is Invalid  
+          
+        msg3:
+          This is a Task Of User Story Authentication Mechanism   
+           
+         
