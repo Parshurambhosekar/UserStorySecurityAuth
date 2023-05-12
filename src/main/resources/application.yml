@@ -1,7 +1,25 @@
 
-
 server:
   port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security
+    username: root
+    password: Parshuram@1727
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true  
+    
+  main:
+    allow-circular-references: true
+
+
+
+
 
 app:
   messages:

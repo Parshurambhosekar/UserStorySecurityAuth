@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
 		
-		auth.userDetailsService(detailsService);
+		auth.userDetailsService(detailsService).passwordEncoder(passwordEncoder());
 	}
 	
 	@Bean
@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf()
 					.disable()
 					.authorizeHttpRequests()
-					.antMatchers("/authenticate")
+					.antMatchers("/authenticate","/save")
 					.permitAll()
 					.anyRequest()
 					.authenticated()

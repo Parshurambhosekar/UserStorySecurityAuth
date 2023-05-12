@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.usertask.security.binding.AuthenticationRequest;
 import com.usertask.security.binding.AutheticationResponse;
+import com.usertask.security.binding.UserDto;
 import com.usertask.security.constants.AppConstants;
 import com.usertask.security.credentialconfig.MyUserDetailsService;
+import com.usertask.security.entity.UserEntity;
 import com.usertask.security.exception.InvalidCredentialException;
 import com.usertask.security.props.AppProperties;
 import com.usertask.security.utils.JwtUtils;
@@ -57,6 +59,17 @@ public class DemoController {
 	     return ResponseEntity.ok(new AutheticationResponse(jwtToken));
 	     
 	}
+	
+	@PostMapping("/save")
+	public ResponseEntity<?> saveUserToDB(@RequestBody UserDto userDto){
+		
+		
+		UserEntity saveUser = userDetailsService.saveUser(userDto);
+		
+		return ResponseEntity.ok(saveUser);
+	}
+	
+	
 	
 	
 	@GetMapping("/task")

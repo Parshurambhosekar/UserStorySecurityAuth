@@ -26,8 +26,6 @@ public class JwtRequestFilter extends OncePerRequestFilter{
 	
 	@Autowired
 	private JwtUtils jwtUtils;
-
-
 	
 	
 	@Override
